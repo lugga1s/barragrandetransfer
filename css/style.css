@@ -168,14 +168,17 @@ footer { background: #0d1117; color: #ccc; padding: 3rem 0 1.5rem; }
 /* ── FLEET CAROUSEL ─────────────────────────────────────────── */
 .fleet-carousel-wrapper { position: relative; display: flex; align-items: center; gap: 0.75rem; }
 .fleet-track-container { overflow: hidden; flex: 1; }
-.fleet-track { display: flex; gap: 1rem; transition: transform 0.4s ease; will-change: transform; }
-.fleet-slide { flex: 0 0 calc((100% - 4rem) / 5); min-width: 0; }
-.fleet-slide img { width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius); display: block; }
+.fleet-track { display: flex; gap: 1.25rem; transition: transform 0.4s ease; will-change: transform; }
+.fleet-slide { flex: 0 0 calc((100% - 2.5rem) / 3); min-width: 0; }
+.fleet-slide img { width: 100%; height: 260px; object-fit: cover; border-radius: var(--radius); display: block; }
+.fleet-caption { text-align: center; margin: 0.5rem 0 0; font-size: 0.9rem; font-weight: 600; color: var(--azul); }
 .fleet-btn { width: 44px; height: 44px; background: var(--azul); color: #fff; border: none; border-radius: 50%; font-size: 2rem; line-height: 1; cursor: pointer; flex-shrink: 0; transition: var(--trans); display: flex; align-items: center; justify-content: center; padding-bottom: 2px; }
 .fleet-btn:hover { background: var(--azul-dark); transform: scale(1.05); }
 .fleet-btn:disabled { background: #ccc; cursor: default; transform: none; }
-@media (max-width: 900px) { .fleet-slide { flex: 0 0 calc((100% - 2rem) / 3); } }
-@media (max-width: 600px) { .fleet-slide { flex: 0 0 calc((100% - 1rem) / 1.5); } .fleet-slide img { height: 180px; } }
+.fleet-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; }
+.fleet-dots button { width: 10px; height: 10px; border-radius: 50%; border: none; background: #ccc; cursor: pointer; padding: 0; transition: background 0.2s; }
+.fleet-dots button.active { background: var(--azul); }
+@media (max-width: 768px) { .fleet-slide { flex: 0 0 100%; } .fleet-slide img { height: 220px; } .fleet-btn { width: 36px; height: 36px; font-size: 1.5rem; } }
 
 /* ── FLOATING WHATSAPP ──────────────────────────────────────── */
 #float-whatsapp { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1000; background: var(--whatsapp); color: #fff; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.5); opacity: 0; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease; animation: bounce 2s infinite 3s; }

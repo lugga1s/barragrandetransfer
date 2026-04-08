@@ -63,22 +63,37 @@ const fleetTrack = document.getElementById('fleet-track');
 if (fleetTrack) {
   const prevBtn = document.querySelector('.fleet-btn-prev');
   const nextBtn = document.querySelector('.fleet-btn-next');
+  const dotsEl = document.getElementById('fleet-dots');
   let idx = 0;
 
-  function visibleCount() {
-    return window.innerWidth >= 900 ? 5 : window.innerWidth >= 600 ? 3 : 1;
-  }
+  function visibleCount() { return window.innerWidth >= 768 ? 3 : 1; }
   function maxIdx() { return Math.max(0, fleetTrack.children.length - visibleCount()); }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    const total = maxIdx() + 1;
+    for (let i = 0; i < total; i++) {
+      const btn = document.createElement('button');
+      btn.setAttribute('aria-label', `Slide ${i + 1}`);
+      if (i === idx) btn.classList.add('active');
+      btn.addEventListener('click', () => { idx = i; update(); });
+      dotsEl.appendChild(btn);
+    }
+  }
+
   function update() {
     const slide = fleetTrack.children[0];
-    const gap = parseFloat(getComputedStyle(fleetTrack).gap) || 16;
+    const gap = parseFloat(getComputedStyle(fleetTrack).gap) || 20;
     fleetTrack.style.transform = `translateX(-${idx * (slide.offsetWidth + gap)}px)`;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx >= maxIdx();
+    dotsEl.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === idx));
   }
+
   prevBtn.addEventListener('click', () => { if (idx > 0) { idx--; update(); } });
   nextBtn.addEventListener('click', () => { if (idx < maxIdx()) { idx++; update(); } });
-  window.addEventListener('resize', () => { idx = Math.min(idx, maxIdx()); update(); });
+  window.addEventListener('resize', () => { idx = Math.min(idx, maxIdx()); buildDots(); update(); });
+  buildDots();
   update();
 }
 
