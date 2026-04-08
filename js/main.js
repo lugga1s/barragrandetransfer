@@ -58,6 +58,30 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(s => observer.observe(s));
 
+// ── Fleet Carousel ───────────────────────────────────────────
+const fleetTrack = document.getElementById('fleet-track');
+if (fleetTrack) {
+  const prevBtn = document.querySelector('.fleet-btn-prev');
+  const nextBtn = document.querySelector('.fleet-btn-next');
+  let idx = 0;
+
+  function visibleCount() {
+    return window.innerWidth >= 900 ? 5 : window.innerWidth >= 600 ? 3 : 1;
+  }
+  function maxIdx() { return Math.max(0, fleetTrack.children.length - visibleCount()); }
+  function update() {
+    const slide = fleetTrack.children[0];
+    const gap = parseFloat(getComputedStyle(fleetTrack).gap) || 16;
+    fleetTrack.style.transform = `translateX(-${idx * (slide.offsetWidth + gap)}px)`;
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx >= maxIdx();
+  }
+  prevBtn.addEventListener('click', () => { if (idx > 0) { idx--; update(); } });
+  nextBtn.addEventListener('click', () => { if (idx < maxIdx()) { idx++; update(); } });
+  window.addEventListener('resize', () => { idx = Math.min(idx, maxIdx()); update(); });
+  update();
+}
+
 // ── Floating WhatsApp: hide near top ────────────────────────
 const floatBtn = document.getElementById('float-whatsapp');
 window.addEventListener('scroll', () => {
