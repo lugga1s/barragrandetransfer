@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /obrigado.html
 
 Sitemap: https://www.barragrandetransfer.com.br/sitemap.xml
