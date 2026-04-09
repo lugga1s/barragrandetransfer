@@ -22,6 +22,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/obrigado.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
