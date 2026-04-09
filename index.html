@@ -530,17 +530,86 @@
   </div>
 </section>
 
-<!-- CONTACT / FOOTER CTA -->
-<div class="cta-block" id="contato">
+<!-- CONTACT FORM -->
+<section id="contato" class="section">
   <div class="container">
-    <h2>Pronto para reservar seu transfer?</h2>
-    <p>Fale agora pelo WhatsApp e garanta sua vaga. Respondemos em minutos!</p>
-    <a href="https://wa.me/556296302812?text=Hi!%20I%20need%20a%20transfer%20in%20Barra%20Grande%F0%9F%8C%B4%0ADestination:%20%0ADate:%20%0APassengers:" class="btn btn-whatsapp" target="_blank" rel="noopener" style="font-size:1.15rem;padding:1rem 2rem;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.12 1.529 5.845L.057 23.25c-.073.277.043.57.297.694.254.124.546.049.737-.186l4.948-3.946C7.396 21.013 9.625 22 12 22c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-      Falar pelo WhatsApp agora
-    </a>
+    <div class="section-header">
+      <h2>Solicite seu Transfer</h2>
+      <p>Preencha os dados abaixo e abriremos o WhatsApp com tudo preenchido para você.</p>
+    </div>
+    <div class="contact-form-wrapper">
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Seu nome</label>
+            <input type="text" id="f-name" name="name" placeholder="Ex: Maria Silva" required>
+          </div>
+          <div class="form-group">
+            <label for="f-phone">Seu WhatsApp</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="Ex: (62) 99999-0000" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-origin">Origem</label>
+            <input type="text" id="f-origin" name="origin" placeholder="Ex: Barra Grande" required>
+          </div>
+          <div class="form-group">
+            <label for="f-dest">Destino</label>
+            <input type="text" id="f-dest" name="dest" placeholder="Ex: Salvador / Aeroporto" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-date">Data da viagem</label>
+            <input type="date" id="f-date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="f-pax">Nº de passageiros</label>
+            <select id="f-pax" name="pax" required>
+              <option value="" disabled selected>Selecione</option>
+              <option value="1">1 passageiro</option>
+              <option value="2">2 passageiros</option>
+              <option value="3">3 passageiros</option>
+              <option value="4">4 passageiros</option>
+              <option value="5">5 passageiros</option>
+              <option value="6 a 10">6 a 10 passageiros</option>
+              <option value="11 a 15">11 a 15 passageiros</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-whatsapp form-submit-btn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.12 1.529 5.845L.057 23.25c-.073.277.043.57.297.694.254.124.546.049.737-.186l4.948-3.946C7.396 21.013 9.625 22 12 22c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          Solicitar orçamento pelo WhatsApp
+        </button>
+      </form>
+    </div>
   </div>
-</div>
+</section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var name   = document.getElementById('f-name').value.trim();
+  var phone  = document.getElementById('f-phone').value.trim();
+  var origin = document.getElementById('f-origin').value.trim();
+  var dest   = document.getElementById('f-dest').value.trim();
+  var date   = document.getElementById('f-date').value;
+  var pax    = document.getElementById('f-pax').value;
+
+  var msg = 'Olá! Quero solicitar um transfer 🌴\n'
+    + 'Nome: ' + (name || '—') + '\n'
+    + 'WhatsApp: ' + (phone || '—') + '\n'
+    + 'Origem: ' + (origin || '—') + '\n'
+    + 'Destino: ' + (dest || '—') + '\n'
+    + 'Data: ' + (date ? date.split('-').reverse().join('/') : '—') + '\n'
+    + 'Passageiros: ' + (pax || '—');
+
+  var waUrl = 'https://wa.me/556296302812?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank', 'noopener,noreferrer');
+  window.location.href = '/obrigado.html';
+});
+</script>
 
 <footer>
   <div class="container">
