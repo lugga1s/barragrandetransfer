@@ -68,7 +68,7 @@ p  { line-height: 1.7; color: var(--texto-claro); }
 }
 
 /* ── HERO ───────────────────────────────────────────────────── */
-#inicio { min-height: 100svh; background: linear-gradient(135deg, #004f70 0%, #006994 50%, #008fcc 100%); display: flex; align-items: center; padding: 5rem 0 3rem; }
+#inicio { min-height: 100svh; background-color: var(--azul-dark); background-image: linear-gradient(rgba(0, 15, 30, 0.55), rgba(0, 15, 30, 0.55)), url('../imagemhome/barragrandehome.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; align-items: center; padding: 5rem 0 3rem; }
 .hero-content { max-width: 720px; }
 .hero-content h1 { color: #fff; margin-bottom: 1.25rem; }
 .hero-content p { color: rgba(255,255,255,0.85); font-size: 1.1rem; margin-bottom: 2rem; }
